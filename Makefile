@@ -1,4 +1,5 @@
-# Sin-Yaw Wang <swang24@scu.edu>
+# Names: Yuto Fraley, Theodore Griffin - Jones, Michael Tiburcio, Joy Zhu
+# Emails: yfraley@scu.edu, tgriffinjones@scu.edu, mtiburcio@scu.edu, jhzhu@scu.edu
 CXX=c++
 OPT=-g
 STD=-std=c++20
