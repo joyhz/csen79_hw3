@@ -10,15 +10,14 @@ class Bag {
     static constexpr size_t DATASIZE = 1000;    // array size
 public:
     using Data = int;   // create an alias for the data
-    Bag(): data{0} {}   // Init everything in the arr to 0
+    Bag(): data{0} {}
 
     // rule of 5
-    ~Bag() = default;   // destructor, will clean up Bag mem but compiler is the one that truly destroys
-                        // = default tells the compiler to do what it thinks is right
+    ~Bag() = default;
     Bag(const Bag &);
     Bag(Bag &&);
     Bag &operator=(const Bag &);
-    Bag &operator=(Bag &&rhs);      // move operator, moves RHS ref
+    Bag &operator=(Bag &&rhs);
 
     // access functions
     const Data &getData(const int) const;
