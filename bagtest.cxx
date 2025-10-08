@@ -22,6 +22,7 @@ int main(void) {
         switch (line[0]) {
         case PUSH: {
             int data;
+            Data top = 0;    // To keep track of the stack's top element
             try {
                 stringstream ss(line.substr(1));
                 ss >> data;
@@ -30,6 +31,7 @@ int main(void) {
                 continue;
             }
             bag.push(data);
+            top++;
         }
             break;
         case POP:
