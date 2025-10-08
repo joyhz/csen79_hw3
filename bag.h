@@ -30,6 +30,7 @@ public:
 private:
     // data storage
     Data data[DATASIZE];
+    Data top;    // To keep track of the top element of the stack
 };
 
 }
