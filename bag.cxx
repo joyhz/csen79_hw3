@@ -39,7 +39,7 @@ namespace csen79 {
     }
 
 
-    // simple asssess functions
+    // simple access functions
     // replace them with appropriate ones for assignments
     const Bag::Data &Bag::getData(const int i) const {
         if (i < 0 || i >= DATASIZE)
@@ -51,7 +51,16 @@ namespace csen79 {
             throw std::out_of_range(std::string("index out of range"));
         data[i] = (Data) d;
     }
-    void Bag::push(const Data &) {};
-    Bag::Data Bag::pop() {return 0;};
+    void Bag::push(const Data &) {
+        if (top >= DATASIZE - 1)
+            throw std::overflow(std::string("Stack is full"));
+        data[++top] = Data d;    // Not entirely sure about this
+    };
+    Bag::Data Bag::pop() {
+        if (isEmpty())
+            throw std::out_of_range("Can't pop, stack is empty");
+        data[top--];    // Also not too sure about this
+        return 0;
+    };
     void Bag::print() const {};
 }
