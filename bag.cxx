@@ -1,5 +1,6 @@
 /*
- * Sin-Yaw Wang <swang24@scu.edu>
+ * Names: Yuto Fraley, Theodore Griffin - Jones, Michael Tiburcio, Joy Zhu
+ * Emails: yfraley@scu.edu, tgriffinjones@scu.edu, mtiburcio@scu.edu, jhzhu@scu.edu
  * recipe for containers using C-style array
  */
 #include <iostream>
