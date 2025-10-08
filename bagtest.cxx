@@ -18,6 +18,7 @@ int main(void) {
     Bag bag;
     string line;
     bool quit = false;
+    top = 0;
     while (!quit && std::getline(cin,line)) {
         switch (line[0]) {
         case PUSH: {
