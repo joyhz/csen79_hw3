@@ -35,7 +35,13 @@ int main(void) {
         }
             break;
         case POP:
-        case PRINT:
+        case PRINT:{
+            cout << "Bag contents: ";
+            bag.print();
+            cout << endl;
+            cout << "Current size: " << bag.size() << endl;
+            break;
+            }
             break;
         case QUIT:
             quit = true;
