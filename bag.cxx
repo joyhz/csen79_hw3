@@ -51,16 +51,22 @@ namespace csen79 {
             throw std::out_of_range(std::string("index out of range"));
         data[i] = (Data) d;
     }
-    void Bag::push(const Data &) {
+    void Bag::push(const Data &d) {
         if (top >= DATASIZE - 1)
             throw std::overflow(std::string("Stack is full"));
-        data[++top] = Data d;    // Not entirely sure about this
+        data[++top] = d;    // Not entirely sure about this
     };
     Bag::Data Bag::pop() {
         if (isEmpty())
             throw std::out_of_range("Can't pop, stack is empty");
-        data[top--];    // Also not too sure about this
-        return 0;
+        return data[top--]; // Also not too sure about this
     };
-    void Bag::print() const {};
+    void Bag::print() const {
+        if(isEmpty())
+            throw std::out_of_range("Cant print, stack is empty"); //if its empty we cant print anything
+        for(int i = top - 1; i >= 0; i--)
+            {
+                std::cout << data[i] << std::endl; //printing from the top -> down
+            }
+    };
 }
