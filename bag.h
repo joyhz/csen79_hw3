@@ -8,8 +8,8 @@
 namespace csen79 {
 
 class Bag {
-    static constexpr size_t DATASIZE = 1000;    // array size
 public:
+    static constexpr size_t DATASIZE = 1000;    // array size
     using Data = int;   // create an alias for the data
     Bag(): data{0} {}
 
@@ -29,7 +29,7 @@ public:
 
 private:
     // data storage
-    Data data[DATASIZE];
+    Data data[DATASIZE] {};
     Data top;    // To keep track of the top element of the stack
 };
 
