@@ -31,17 +31,19 @@ int main(void) {
                 continue;
             }
             bag.push(data);
-            top++;
+            top++;    //Might not need bc of the data[++top] in bag.cxx
         }
             break;
-        case POP:
+        case POP: {
+            bag.pop();
+        }
         case PRINT:{
             cout << "Bag contents: ";
             bag.print();
             cout << endl;
             cout << "Current size: " << bag.size() << endl;
             break;
-            }
+        }
             break;
         case QUIT:
             quit = true;
