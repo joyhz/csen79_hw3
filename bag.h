@@ -11,8 +11,9 @@ class Bag {
 public:
     static constexpr size_t DATASIZE = 1000;    // array size
     using Data = int;   // create an alias for the data
-    Bag(): data{0} {}
+    Bag(): data{0}, top(-1) {}
 
+    
     // rule of 5
     ~Bag() = default;
     Bag(const Bag &);
@@ -26,6 +27,9 @@ public:
     void push(const Data &);
     Data pop();
     void print() const;
+    bool isEmpty() const;
+    std::size_t size() const;
+
 
 private:
     // data storage
