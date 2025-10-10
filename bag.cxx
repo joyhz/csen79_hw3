@@ -12,8 +12,6 @@
 #include "bag.h"
 
 namespace csen79 {
-    top  = -1;
-
     // assignment
     Bag &Bag::operator=(const Bag &rhs) {
         std::cout << "assign" << std::endl;
@@ -54,18 +52,16 @@ namespace csen79 {
     }
     void Bag::push(const Data &d) {
         if (top >= DATASIZE - 1)
-            throw std::overflow(std::string("Stack is full"));
+            throw std::overflow_error(std::string("Stack is full"));
         data[++top] = d;
     };
     Bag::Data Bag::pop() {
-        //if (isEmpty())
-        if (top == -1)
+        if (isEmpty())
             throw std::out_of_range("Can't pop, stack is empty");
         return data[top--];
     };
     void Bag::print() const {
-        //if(isEmpty())
-        if (top == -1)
+        if(isEmpty())
             throw std::out_of_range("Cant print, stack is empty");    // If it's empty, we can't print anything
         for(int i = top - 1; i >= 0; i--)
         {
