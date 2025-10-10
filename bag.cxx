@@ -49,24 +49,24 @@ namespace csen79 {
     void Bag::setData(const int i, const Data &d) {
         if (i < 0 || i >= DATASIZE)
             throw std::out_of_range(std::string("index out of range"));
-        data[i] = (Data) d;
+        data[i] = d;
     }
     void Bag::push(const Data &d) {
         if (top >= DATASIZE - 1)
             throw std::overflow(std::string("Stack is full"));
-        data[++top] = d;    // Not entirely sure about this
+        data[++top] = d;
     };
     Bag::Data Bag::pop() {
         if (isEmpty())
             throw std::out_of_range("Can't pop, stack is empty");
-        return data[top--]; // Also not too sure about this
+        return data[top--];
     };
     void Bag::print() const {
         if(isEmpty())
-            throw std::out_of_range("Cant print, stack is empty"); //if its empty we cant print anything
+            throw std::out_of_range("Cant print, stack is empty");    // If it's empty, we can't print anything
         for(int i = top - 1; i >= 0; i--)
-            {
-                std::cout << data[i] << std::endl; //printing from the top -> down
-            }
+        {
+                std::cout << data[i] << std::endl; // Printing from the top -> down
+        }
     };
 }
