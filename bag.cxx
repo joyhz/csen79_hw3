@@ -12,6 +12,7 @@
 #include "bag.h"
 
 namespace csen79 {
+    top  = -1;
 
     // assignment
     Bag &Bag::operator=(const Bag &rhs) {
@@ -57,12 +58,14 @@ namespace csen79 {
         data[++top] = d;
     };
     Bag::Data Bag::pop() {
-        if (isEmpty())
+        //if (isEmpty())
+        if (top == -1)
             throw std::out_of_range("Can't pop, stack is empty");
         return data[top--];
     };
     void Bag::print() const {
-        if(isEmpty())
+        //if(isEmpty())
+        if (top == -1)
             throw std::out_of_range("Cant print, stack is empty");    // If it's empty, we can't print anything
         for(int i = top - 1; i >= 0; i--)
         {
