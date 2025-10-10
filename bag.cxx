@@ -45,6 +45,9 @@ namespace csen79 {
             throw std::out_of_range(std::string("index out of range"));
         return data[i];
     };
+    bool Bag::isEmpty() const {
+        return top < 0;
+    }
     void Bag::setData(const int i, const Data &d) {
         if (i < 0 || i >= DATASIZE)
             throw std::out_of_range(std::string("index out of range"));
