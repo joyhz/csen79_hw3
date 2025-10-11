@@ -4,4 +4,12 @@ P 30
 P 40
 O
 D
+P 40
+P 50
+O
+O
+O
+O
+O
+D
 Q
