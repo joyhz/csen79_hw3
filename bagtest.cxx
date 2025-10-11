@@ -14,11 +14,30 @@ using namespace std;
 using namespace csen79;
 enum Command { PUSH = 'P', POP = 'O', PRINT = 'D', QUIT = 'Q' };
 
-int main(void) {
+int main(int argc, char *argv[]) {
     Bag bag;
     string line;
     bool quit = false;
-    while (!quit && std::getline(cin,line)) {
+
+    istream *input; // Pointer to input stream
+    ifstream inputFile;
+    if (argc == 1) {
+        cout << "No file provided, reading from standard input." << endl;
+        input = &cin;   // input points to standard input
+    }
+    else {
+        inputFile.open(argv[1]);
+        cout << "Reading from file: " << argv[1] << endl;
+        if (!inputFile) {
+            cerr << "Error opening file: " << argv[1] << endl;
+            exit(1);
+        }
+        input = &inputFile; // input points to the file stream
+    }
+    
+    while (!quit && getline(*input,line)) {
+        if (line.empty()) 
+        continue;   // skip empty lines
         switch (line[0]) {
             case PUSH: {
                 int data;
@@ -51,6 +70,5 @@ int main(void) {
                 break;
         }
     }
-    
     return EXIT_SUCCESS;
 }
