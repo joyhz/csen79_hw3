@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     
     while (!quit && getline(*input,line)) {
         if (line.empty()) 
-        continue;   // skip empty lines
+            continue;   // skip empty lines
         switch (line[0]) {
             case PUSH: {
                 int data;
