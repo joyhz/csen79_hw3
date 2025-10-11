@@ -34,6 +34,7 @@ public:
 private:
     // data storage
     Data data[DATASIZE] {};
+    Data top;
 };
 
 }
