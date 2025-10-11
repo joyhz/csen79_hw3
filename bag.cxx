@@ -42,24 +42,26 @@ namespace csen79 {
     // replace them with appropriate ones for assignments
     const Bag::Data &Bag::getData(const int i) const {
         if (i < 0 || i >= DATASIZE)
-            throw std::out_of_range(std::string("index out of range"));
+            throw std::out_of_range(std::string("Index out of range"));
         return data[i];
-    
-        bool Bag::isEmpty() const {
-            return top < 0;
-        }
-        std::size_t Bag::size() const {
-            return static_cast<std::size_t>(top + 1);
-        }
     };
+
+    bool Bag::isEmpty() const {
+        return top < 0;
+    }
+
+    std::size_t Bag::size() const {
+        return static_cast<std::size_t>(top + 1);
+    }
+
     void Bag::setData(const int i, const Data &d) {
         if (i < 0 || i >= DATASIZE)
-            throw std::out_of_range(std::string("index out of range"));
+            throw std::out_of_range("Index out of range");
         data[i] = d;
     }
     void Bag::push(const Data &d) {
-        if (top >= DATASIZE - 1)
-            throw std::overflow_error(std::string("Stack is full"));
+        if (top < -1 || top >= DATASIZE - 1)    // top < -1 checks for data corruption
+            throw std::overflow_error("Stack is full");
         data[++top] = d;
     };
     Bag::Data Bag::pop() {
@@ -70,9 +72,8 @@ namespace csen79 {
     void Bag::print() const {
         if(isEmpty())
             throw std::out_of_range("Cant print, stack is empty");    // If it's empty, we can't print anything
-        for(int i = top - 1; i >= 0; i--)
-        {
-                std::cout << data[i] << std::endl; // Printing from the top -> down
+        for (int i = top - 1; i >= 0; i--) {
+            std::cout << data[i] << std::endl; // Printing from the top -> down
         }
     };
 }
