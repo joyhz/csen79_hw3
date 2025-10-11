@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
             }
                 break;
             case QUIT:
+                cout << "Quitting..." << endl;
                 quit = true;
                 break;
             default:
