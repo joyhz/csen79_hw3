@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <istream>
+#include <fstream>
 #include <sstream>
 #include <stdexcept>
 #include "bag.h"
