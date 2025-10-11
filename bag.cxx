@@ -78,7 +78,7 @@ namespace csen79 {
     };
     void Bag::print() const {
         if(isEmpty())
-            throw std::out_of_range("Can't print, stack is empty");    // If it's empty, we can't print anything
+            std::cout << "Stack is empty" << std::endl;
         for (int i = top; i >= 0; i--) {
             std::cout << data[i] << std::endl; // Printing from the top -> down
         }
