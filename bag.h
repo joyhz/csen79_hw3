@@ -27,13 +27,14 @@ public:
     void push(const Data &);
     Data pop();
     void print() const;
+    bool isEmpty() const;
+    bool isFull() const;
+    std::size_t size() const;
 
 private:
     // data storage
     Data data[DATASIZE] {};
     Data top;
-    bool isEmpty() const;
-    size_t size() const;
 };
 
 }
