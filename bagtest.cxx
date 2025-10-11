@@ -50,6 +50,7 @@ int main(int argc, char *argv[]) {
                     continue;
                 }
                 bag.push(data);
+                cout << "Pushed: " << data << endl;
             }
                 break;
             case POP: {
